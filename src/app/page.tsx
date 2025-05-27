@@ -33,7 +33,7 @@ export default function Home() {
 
       {/* Menu Title */}
       <div className="mb-12 w-full text-center">
-        <h2 className="mb-2 font-serif text-5xl italic">Menù</h2>
+        <h2 className="text-sabilaHeading mb-2 font-serif italic">Menù</h2>
         <div className="mx-auto h-0.5 w-16 bg-black"></div>
       </div>
 

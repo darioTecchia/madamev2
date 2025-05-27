@@ -22,7 +22,7 @@ export default async function MenuPage({
       <HeadWithLogo className="mb-6" />
 
       <div className="mb-12 text-center">
-        <h1 className="mb-3 font-serif text-4xl italic md:text-5xl">
+        <h1 className="text-sabilaHeading mb-3 font-serif italic">
           {menu?.name}
         </h1>
         <div className="mx-auto mb-6 h-0.5 w-16 bg-black"></div>

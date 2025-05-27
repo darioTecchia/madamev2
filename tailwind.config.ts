@@ -86,7 +86,14 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      fontSize: {
+        "sabilaHeading": ['6rem', { lineHeight: '6rem' }],
       }
-    }
+    },
+    fontFamily: {
+      sans: ['var(--font-barlow)', 'sans-serif'],
+      serif: ['var(--font-sabila)', 'serif']
+    },
   }
 } satisfies Config;

@@ -194,79 +194,8 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
               ))}
             </div>
           </div>
-
-          {/* Martini Options */}
-          <div className="rounded-lg bg-gray-50 p-6">
-            <h3 className="mb-4 text-xl font-medium">
-              Personalizza il tuo Martini
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <p className="mb-2 font-medium">Stile:</p>
-                <div className="flex gap-4">
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="style"
-                      className="mr-2"
-                      defaultChecked
-                    />
-                    Dry
-                  </label>
-                  <label className="flex items-center">
-                    <input type="radio" name="style" className="mr-2" />
-                    Extra Dry
-                  </label>
-                  <label className="flex items-center">
-                    <input type="radio" name="style" className="mr-2" />
-                    Dirty
-                  </label>
-                </div>
-              </div>
-              <div>
-                <p className="mb-2 font-medium">Guarnizione:</p>
-                <div className="flex gap-4">
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="garnish"
-                      className="mr-2"
-                      defaultChecked
-                    />
-                    Olive
-                  </label>
-                  <label className="flex items-center">
-                    <input type="radio" name="garnish" className="mr-2" />
-                    Twist di limone
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
         </TabsContent>
       </Tabs>
-
-      {/* Additional Info */}
-      <div className="mt-12 w-full border-t pt-8">
-        <h3 className="mb-4 text-xl font-medium">Consigli del bartender</h3>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="mb-2 font-medium">Perfect Serve G&T</h4>
-            <p className="text-sm text-gray-600">
-              Ghiaccio abbondante, gin versato delicatamente, tonica fredda
-              aggiunta lentamente lungo il cucchiaio bar. Guarnire con botaniche
-              fresche.
-            </p>
-          </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="mb-2 font-medium">Classic Martini</h4>
-            <p className="text-sm text-gray-600">
-              Gin e vermouth raffreddati in mixing glass con ghiaccio, mescolati
-              delicatamente e filtrati nella coppetta ghiacciata.
-            </p>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

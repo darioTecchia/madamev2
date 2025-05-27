@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.scss";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const barlowFont = Barlow({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-barlow",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const sabilaFont = localFont({
+  src: "../fonts/SabilaRenytha.otf",
+  variable: "--font-sabila",
 });
 
 export const metadata: Metadata = {
@@ -55,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${barlowFont.variable} ${sabilaFont.variable} antialiased`}
       >
         <div className="flex min-h-screen flex-col bg-white text-black">
           <Header />
