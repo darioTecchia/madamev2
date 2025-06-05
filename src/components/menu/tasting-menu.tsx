@@ -1,6 +1,5 @@
 import DB from '@/data/db';
 import { EMenuKind, IMenu, IMenuItem, ITastingMenu } from '@/models/menu';
-import { Globe } from 'lucide-react';
 import Link from 'next/link';
 
 interface TastingMenuProps {

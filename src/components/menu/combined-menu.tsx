@@ -3,7 +3,7 @@
 import { IMenu } from '@/models/menu';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Info, Martini } from 'lucide-react';
+import { Martini } from 'lucide-react';
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
