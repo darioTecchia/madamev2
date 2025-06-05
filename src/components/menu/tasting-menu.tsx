@@ -7,6 +7,11 @@ interface TastingMenuProps {
 }
 
 export default function TastingMenu({ menu }: TastingMenuProps) {
+  const otherTastingMenus = DB.menus.filter(
+    (otherMenu: IMenu) =>
+      otherMenu.kind === EMenuKind.Tasting && otherMenu.id !== menu?.id,
+  ) as ITastingMenu[];
+
   return (
     <>
       {/* <div className="mb-12 text-center">
@@ -32,26 +37,28 @@ export default function TastingMenu({ menu }: TastingMenuProps) {
       </div>
 
       {/* Other Tastings */}
-      <div className="mb-12 w-full">
-        <h3 className="mb-6 text-xl font-medium">Altre degustazioni</h3>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {otherTastingMenus.map((menu) => (
-            <Link href={`/menu/${menu.id}`} className="group" key={menu.id}>
-              <div className="overflow-hidden rounded-lg border border-gray-200">
-                <div className="p-4">
-                  <h4 className="mb-1 font-serif text-5xl italic">
-                    {menu.name}
-                  </h4>
-                  <p className="mb-2 text-sm text-gray-600">
-                    {menu.description}
-                  </p>
-                  <p className="font-medium">{menu.price} €</p>
+      {otherTastingMenus.length > 0 && (
+        <div className="mb-12 w-full">
+          <h3 className="mb-6 text-xl font-medium">Altre degustazioni</h3>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {otherTastingMenus.map((menu) => (
+              <Link href={`/menu/${menu.id}`} className="group" key={menu.id}>
+                <div className="overflow-hidden rounded-lg border border-gray-200">
+                  <div className="p-4">
+                    <h4 className="mb-1 font-serif text-5xl italic">
+                      {menu.name}
+                    </h4>
+                    <p className="mb-2 text-sm text-gray-600">
+                      {menu.description}
+                    </p>
+                    <p className="font-medium">{menu.price} €</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
@@ -96,7 +103,3 @@ function TastingItem({ item, index }: ITastingItemProps) {
     </div>
   );
 }
-
-const otherTastingMenus = DB.menus.filter(
-  (menu: IMenu) => menu.kind === EMenuKind.Tasting,
-) as ITastingMenu[];
