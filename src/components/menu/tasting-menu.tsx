@@ -9,10 +9,10 @@ interface TastingMenuProps {
 export default function TastingMenu({ menu }: TastingMenuProps) {
   return (
     <>
-      <div className="mb-12 text-center">
+      {/* <div className="mb-12 text-center">
         <div className="mx-auto mb-6 h-0.5 w-16 bg-black"></div>
         <p className="mx-auto max-w-lg text-gray-700">{menu?.description}</p>
-      </div>
+      </div> */}
 
       {/* Rum List */}
       {menu?.items && (
