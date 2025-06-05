@@ -36,11 +36,7 @@ export default function TastingMenu({ menu }: TastingMenuProps) {
         <h3 className="mb-6 text-xl font-medium">Altre degustazioni</h3>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {otherTastingMenus.map((menu) => (
-            <Link
-              href={`/degustazioni/${menu.id}`}
-              className="group"
-              key={menu.id}
-            >
+            <Link href={`/menu/${menu.id}`} className="group" key={menu.id}>
               <div className="overflow-hidden rounded-lg border border-gray-200">
                 <div className="p-4">
                   <h4 className="mb-1 font-serif text-5xl italic">
