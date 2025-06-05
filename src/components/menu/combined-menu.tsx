@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { IMenu } from "@/models/menu";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Info, Martini } from "lucide-react";
-import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { IMenu } from '@/models/menu';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Info, Martini } from 'lucide-react';
+import { useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface CombinedMenuProps {
   menu: IMenu;
@@ -45,8 +45,8 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                   key={gin.name}
                   className={`cursor-pointer transition-all ${
                     selectedGin === gin.name
-                      ? "border-black shadow-lg"
-                      : "border-gray-200 hover:border-gray-400"
+                      ? 'border-black shadow-lg'
+                      : 'border-gray-200 hover:border-gray-400'
                   }`}
                   onClick={() => setSelectedGin(gin.name)}
                 >
@@ -73,7 +73,7 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                         <p className="text-xl font-medium">€{gin.price}</p>
                         {gin.origin && (
                           <p className="mt-1 text-xs text-gray-500">
-                            {gin.origin}
+                            <span className={`fi fi-${gin.origin}`}></span>
                           </p>
                         )}
                       </div>
@@ -98,8 +98,8 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                   key={tonic.name}
                   className={`cursor-pointer transition-all ${
                     selectedTonic === tonic.name
-                      ? "border-black shadow-lg"
-                      : "border-gray-200 hover:border-gray-400"
+                      ? 'border-black shadow-lg'
+                      : 'border-gray-200 hover:border-gray-400'
                   }`}
                   onClick={() => setSelectedTonic(tonic.name)}
                 >
@@ -125,26 +125,28 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
               <div className="mb-4 space-y-2">
                 <div className="flex justify-between">
                   <span>{selectedGin}</span>
-                  <span>
+                  <strong>
                     €{menu.items?.find((g) => g.name === selectedGin)?.price}
-                  </span>
+                  </strong>
                 </div>
                 {selectedTonic && (
                   <div className="flex justify-between">
                     <span>{selectedTonic}</span>
-                    <span>
+                    <strong>
                       +€
                       {
                         menu.additionalItems?.find(
                           (t) => t.name === selectedTonic,
                         )?.price
                       }
-                    </span>
+                    </strong>
                   </div>
                 )}
-                <div className="flex justify-between border-t pt-2 font-medium">
+                <div className="flex items-center justify-between border-t pt-2 font-medium">
                   <span>Totale</span>
-                  <span>€{calculateTotal()}</span>
+                  <span className="flex aspect-square h-11 items-center justify-center rounded-full bg-black text-center align-middle text-white">
+                    €{calculateTotal()}
+                  </span>
                 </div>
               </div>
             </div>
@@ -179,10 +181,10 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                         <p className="mb-2 text-sm text-gray-600">
                           {gin.description}
                         </p>
-                        <Badge variant="outline" className="text-xs">
+                        {/* <Badge variant="outline" className="text-xs">
                           <Info className="mr-1 h-3 w-3" />
                           Perfetto per Martini
-                        </Badge>
+                        </Badge> */}
                       </div>
                       <div className="ml-4 text-right">
                         <p className="text-xl font-medium">€8</p>

@@ -7,7 +7,6 @@ export enum EMenuKind {
 export interface IMenu {
   id: string;
   name: string;
-  href: string;
   description?: string;
   items?: IMenuItem[];
   additionalItems?: IMenuItem[];
@@ -26,7 +25,7 @@ export interface ITastingMenu extends IMenu {
 
 export interface IMenuItem {
   name: string;
-  description: string;
+  description?: string;
   price?: number;
   age?: string;
   origin?: string;

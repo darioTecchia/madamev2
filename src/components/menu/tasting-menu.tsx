@@ -1,7 +1,7 @@
-import DB from "@/data/db";
-import { EMenuKind, IMenu, IMenuItem, ITastingMenu } from "@/models/menu";
-import { Globe } from "lucide-react";
-import Link from "next/link";
+import DB from '@/data/db';
+import { EMenuKind, IMenu, IMenuItem, ITastingMenu } from '@/models/menu';
+import { Globe } from 'lucide-react';
+import Link from 'next/link';
 
 interface TastingMenuProps {
   menu?: ITastingMenu;
@@ -44,7 +44,7 @@ export default function TastingMenu({ menu }: TastingMenuProps) {
             >
               <div className="overflow-hidden rounded-lg border border-gray-200">
                 <div className="p-4">
-                  <h4 className="mb-1 font-serif text-xl italic">
+                  <h4 className="mb-1 font-serif text-5xl italic">
                     {menu.name}
                   </h4>
                   <p className="mb-2 text-sm text-gray-600">
@@ -79,8 +79,7 @@ function TastingItem({ item, index }: ITastingItemProps) {
         </div>
 
         <div className="mb-4 flex items-center gap-2">
-          <Globe className="h-4 w-4 text-gray-500" />
-          <span className="text-sm text-gray-700">{item.origin}</span>
+          <span className={`fi text-sm fi-${item.origin}`}></span>
         </div>
 
         <p className="mb-4 text-gray-700">{item.description}</p>

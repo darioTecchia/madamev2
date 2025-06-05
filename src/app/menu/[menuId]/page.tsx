@@ -1,10 +1,10 @@
-import CombinedMenu from "@/components/menu/combined-menu";
-import SimpleMenu from "@/components/menu/simple-menu";
-import TastingMenu from "@/components/menu/tasting-menu";
-import HeadWithLogo from "@/components/ui/head-with-logo";
-import DB from "@/data/db";
-import { EMenuKind, ICombinedMenu, IMenu, ITastingMenu } from "@/models/menu";
-import Link from "next/link";
+import CombinedMenu from '@/components/menu/combined-menu';
+import SimpleMenu from '@/components/menu/simple-menu';
+import TastingMenu from '@/components/menu/tasting-menu';
+import HeadWithLogo from '@/components/ui/head-with-logo';
+import DB from '@/data/db';
+import { EMenuKind, ICombinedMenu, IMenu, ITastingMenu } from '@/models/menu';
+import Link from 'next/link';
 
 export default async function MenuPage({
   params,
@@ -22,7 +22,7 @@ export default async function MenuPage({
       <HeadWithLogo className="mb-6" />
 
       <div className="mb-12 text-center">
-        <h1 className="text-sabilaHeading mb-3 font-serif italic">
+        <h1 className="mb-3 font-serif text-sabilaHeading italic">
           {menu?.name}
         </h1>
         <div className="mx-auto mb-6 h-0.5 w-16 bg-black"></div>
@@ -44,11 +44,13 @@ export default async function MenuPage({
       <div className="mt-16 w-full">
         <h3 className="mb-4 text-lg font-medium">Esplora il nostro menù</h3>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          <CategoryLink href="/caffetteria" name="Caffetteria" />
-          <CategoryLink href="/dolci-e-gelati" name="Dolci e gelati" />
-          <CategoryLink href="/birre" name="Birre" />
-          <CategoryLink href="/cocktail-signature" name="Cocktail signature" />
-          <CategoryLink href="/vini" name="Vini" />
+          {DB.menus.map((menu) => (
+            <CategoryLink
+              key={menu.id}
+              href={`/menu/${menu.id}`}
+              name={menu.name}
+            />
+          ))}
         </div>
       </div>
     </>

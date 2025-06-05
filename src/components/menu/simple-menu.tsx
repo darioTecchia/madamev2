@@ -14,6 +14,7 @@ export default function SimpleMenu({ menu }: SimpleMenuProps) {
           name={item.name}
           price={item.price}
           description={item.description}
+          size={item.size}
           // image={item.image}
         />
       ))}

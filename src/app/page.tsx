@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Phone, MapPin, ChevronRight } from "lucide-react";
-import HeadWithLogo from "@/components/ui/head-with-logo";
-import { EMenuKind, IMenu } from "@/models/menu";
+import Link from 'next/link';
+import { Phone, MapPin, ChevronRight } from 'lucide-react';
+import HeadWithLogo from '@/components/ui/head-with-logo';
+import DB from '@/data/db';
 
 export default function Home() {
   return (
@@ -33,22 +33,25 @@ export default function Home() {
 
       {/* Menu Title */}
       <div className="mb-12 w-full text-center">
-        <h2 className="text-sabilaHeading mb-2 font-serif italic">Menù</h2>
+        <h2 className="mb-2 font-serif text-sabilaHeading italic">Menù</h2>
         <div className="mx-auto h-0.5 w-16 bg-black"></div>
       </div>
 
       {/* Menu Categories */}
       <div className="w-full space-y-6">
-        {menus.map((category, index) => (
-          <Link key={index} href={category.href} className="group block">
-            <div className="flex items-center justify-between border-b border-gray-100 py-4">
-              <div className="flex items-center gap-2">
-                <span className="inline-block h-2 w-2 rounded-full bg-black"></span>
-                <h3 className="text-xl font-medium transition-colors group-hover:text-gray-600">
-                  {category.name}
-                </h3>
+        {DB.menus.map((menu, index) => (
+          <Link key={index} href={`/menu/${menu.id}`} className="group block">
+            <div className="border-b border-gray-100 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-black"></span>
+                  <h3 className="text-xl font-medium transition-colors group-hover:text-gray-600">
+                    {menu.name}
+                  </h3>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400 transition-colors group-hover:text-gray-600" />
               </div>
-              <ChevronRight className="h-5 w-5 text-gray-400 transition-colors group-hover:text-gray-600" />
+              <p className="text-sm text-gray-500">{menu.description}</p>
             </div>
           </Link>
         ))}
@@ -56,32 +59,13 @@ export default function Home() {
 
       {/* Call to Action */}
       <div className="mt-16 text-center">
-        <button className="rounded-none bg-black px-8 py-6 text-white hover:bg-gray-800">
+        <a
+          href="tel:+393293985389"
+          className="rounded-none bg-black px-8 py-6 text-white hover:bg-gray-800 hover:underline"
+        >
           Prenota un tavolo
-        </button>
+        </a>
       </div>
     </>
   );
 }
-
-// Sample data
-const menus: IMenu[] = [
-  {
-    id: "caffetteria",
-    name: "Caffetteria",
-    href: "/menu/caffetteria",
-    kind: EMenuKind.Simple,
-  },
-  {
-    id: "gin-list",
-    name: "Gin List",
-    href: "/menu/gin-list",
-    kind: EMenuKind.Combined,
-  },
-  {
-    id: "la-via-del-rum",
-    name: "La Via del Rum",
-    href: "/menu/la-via-del-rum",
-    kind: EMenuKind.Tasting,
-  },
-];

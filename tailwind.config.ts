@@ -89,6 +89,7 @@ export default {
       },
       fontSize: {
         "sabilaHeading": ['6rem', { lineHeight: '6rem' }],
+        "sabilaSmallHeading": ['4rem', { lineHeight: '4rem' }],
       }
     },
     fontFamily: {
