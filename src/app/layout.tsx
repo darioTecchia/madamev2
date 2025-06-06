@@ -1,51 +1,51 @@
-import type { Metadata } from "next";
-import { Barlow } from "next/font/google";
-import localFont from "next/font/local";
+import type { Metadata } from 'next';
+import { Barlow } from 'next/font/google';
+import localFont from 'next/font/local';
 
-import "./globals.scss";
-import Header from "@/components/ui/header";
-import Footer from "@/components/ui/footer";
+import './globals.scss';
+import Header from '@/components/ui/header';
+import Footer from '@/components/ui/footer';
 
 const barlowFont = Barlow({
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-barlow",
-  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-barlow',
+  subsets: ['latin'],
 });
 
 const sabilaFont = localFont({
-  src: "../fonts/SabilaRenytha.otf",
-  variable: "--font-sabila",
+  src: '../fonts/SabilaRenytha.otf',
+  variable: '--font-sabila',
 });
 
 export const metadata: Metadata = {
-  title: "Madame Lounge Bar",
-  description: "Madame Lounge Bar - Agerola, Napoli",
+  title: 'Madame Lounge Bar',
+  description: 'Madame Lounge Bar - Agerola, Napoli',
   openGraph: {
-    title: "Madame Lounge Bar",
-    description: "Madame Lounge Bar - Agerola, Napoli",
-    url: "https://madameloungebar.com",
-    siteName: "Madame Lounge Bar",
+    title: 'Madame Lounge Bar',
+    description: 'Madame Lounge Bar - Agerola, Napoli',
+    url: 'https://madameloungebar.com',
+    siteName: 'Madame Lounge Bar',
   },
   keywords: [
-    "Madame Lounge Bar",
-    "Agerola",
-    "Napoli",
-    "Bar",
-    "Lounge",
-    "Cocktails",
-    "Food",
-    "Drinks",
-    "Events",
-    "Live Music",
-    "Relax",
-    "Social",
-    "Friends",
-    "Family",
-    "Outdoor Seating",
-    "Italian Cuisine",
-    "Italian Bar",
-    "Italian Lounge",
-    "Italian Cocktails",
+    'Madame Lounge Bar',
+    'Agerola',
+    'Napoli',
+    'Bar',
+    'Lounge',
+    'Cocktails',
+    'Food',
+    'Drinks',
+    'Events',
+    'Live Music',
+    'Relax',
+    'Social',
+    'Friends',
+    'Family',
+    'Outdoor Seating',
+    'Italian Cuisine',
+    'Italian Bar',
+    'Italian Lounge',
+    'Italian Cocktails',
   ],
 };
 
