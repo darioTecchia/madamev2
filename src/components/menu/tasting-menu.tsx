@@ -5,7 +5,7 @@ import {
   TastingMenu as ITastingMenu,
   MenuItem,
 } from '@/models/menu';
-import Link from 'next/link';
+import Link from '../ui/Link';
 
 interface TastingMenuProps {
   menu?: ITastingMenu;

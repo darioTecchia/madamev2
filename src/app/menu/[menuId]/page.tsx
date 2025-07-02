@@ -2,6 +2,7 @@ import CombinedMenu from '@/components/menu/combined-menu';
 import SimpleMenu from '@/components/menu/simple-menu';
 import TastingMenu from '@/components/menu/tasting-menu';
 import HeadWithLogo from '@/components/ui/head-with-logo';
+import Link from '@/components/ui/Link';
 import DB from '@/data/db';
 import {
   MenuType,
@@ -9,7 +10,6 @@ import {
   Menu,
   TastingMenu as ITastingMenu,
 } from '@/models/menu';
-import Link from 'next/link';
 
 export default async function MenuPage({
   params,
