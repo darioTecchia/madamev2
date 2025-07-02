@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { Phone, MapPin, ChevronRight } from 'lucide-react';
 import HeadWithLogo from '@/components/ui/head-with-logo';
 import DB from '@/data/db';
+import Link from '@/components/ui/Link';
 
 export default function Home() {
   return (
@@ -40,7 +40,12 @@ export default function Home() {
       {/* Menu Categories */}
       <div className="w-full space-y-6">
         {DB.menus.map((menu, index) => (
-          <Link key={index} href={`/menu/${menu.id}`} className="group block">
+          <Link
+            key={index}
+            href={`/menu/${menu.id}`}
+            className="group block"
+            prefetch={false}
+          >
             <div className="border-b border-gray-100 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">

@@ -3,7 +3,12 @@ import SimpleMenu from '@/components/menu/simple-menu';
 import TastingMenu from '@/components/menu/tasting-menu';
 import HeadWithLogo from '@/components/ui/head-with-logo';
 import DB from '@/data/db';
-import { EMenuKind, ICombinedMenu, IMenu, ITastingMenu } from '@/models/menu';
+import {
+  MenuType,
+  CombinedMenu as ICombinedMenu,
+  Menu,
+  TastingMenu as ITastingMenu,
+} from '@/models/menu';
 import Link from 'next/link';
 
 export default async function MenuPage({
@@ -13,7 +18,7 @@ export default async function MenuPage({
 }) {
   const { menuId } = await params;
 
-  const menu: IMenu | undefined =
+  const menu: Menu | undefined =
     DB.menus.find((m) => m.id === menuId) || undefined;
 
   return (
@@ -32,11 +37,11 @@ export default async function MenuPage({
       </div>
 
       {/* Menu Items */}
-      {menu?.kind === EMenuKind.Simple && <SimpleMenu menu={menu} />}
-      {menu?.kind === EMenuKind.Combined && (
+      {menu?.type === MenuType.Simple && <SimpleMenu menu={menu} />}
+      {menu?.type === MenuType.Combined && (
         <CombinedMenu menu={menu as ICombinedMenu} />
       )}
-      {menu?.kind === EMenuKind.Tasting && (
+      {menu?.type === MenuType.Tasting && (
         <TastingMenu menu={menu as ITastingMenu} />
       )}
 

@@ -8,7 +8,7 @@ export interface MenuItemProps {
   size?: string;
 }
 
-export default function MenuItem({
+export function MenuItem({
   name,
   price,
   description,

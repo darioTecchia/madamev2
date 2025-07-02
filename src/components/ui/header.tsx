@@ -1,5 +1,5 @@
-import { Instagram } from "lucide-react";
-import Link from "next/link";
+import { Instagram } from 'lucide-react';
+import Link from './Link';
 
 export default function Header() {
   return (

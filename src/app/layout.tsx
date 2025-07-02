@@ -5,6 +5,8 @@ import localFont from 'next/font/local';
 import './globals.scss';
 import Header from '@/components/ui/header';
 import Footer from '@/components/ui/footer';
+import LoadingProvider from './provider/loading-provider';
+import Splash from '@/components/ui/splash';
 
 const barlowFont = Barlow({
   weight: ['400', '500', '600', '700'],
@@ -59,13 +61,16 @@ export default function RootLayout({
       <body
         className={`${barlowFont.variable} ${sabilaFont.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col bg-white text-black">
-          <Header />
-          <main className="container mx-auto flex max-w-2xl flex-1 flex-col items-center px-4 py-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <LoadingProvider>
+          <div className="flex min-h-screen flex-col bg-white text-black">
+            <Header />
+            <main className="container mx-auto flex max-w-2xl flex-1 flex-col items-center px-4 py-8">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          <Splash />
+        </LoadingProvider>
       </body>
     </html>
   );

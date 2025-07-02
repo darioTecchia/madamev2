@@ -1,5 +1,10 @@
 import DB from '@/data/db';
-import { EMenuKind, IMenu, IMenuItem, ITastingMenu } from '@/models/menu';
+import {
+  Menu,
+  MenuType,
+  TastingMenu as ITastingMenu,
+  MenuItem,
+} from '@/models/menu';
 import Link from 'next/link';
 
 interface TastingMenuProps {
@@ -8,8 +13,8 @@ interface TastingMenuProps {
 
 export default function TastingMenu({ menu }: TastingMenuProps) {
   const otherTastingMenus = DB.menus.filter(
-    (otherMenu: IMenu) =>
-      otherMenu.kind === EMenuKind.Tasting && otherMenu.id !== menu?.id,
+    (otherMenu: Menu) =>
+      otherMenu.type === MenuType.Tasting && otherMenu.id !== menu?.id,
   ) as ITastingMenu[];
 
   return (
@@ -64,7 +69,7 @@ export default function TastingMenu({ menu }: TastingMenuProps) {
 }
 
 interface ITastingItemProps {
-  item: IMenuItem;
+  item: MenuItem;
   index: number;
 }
 

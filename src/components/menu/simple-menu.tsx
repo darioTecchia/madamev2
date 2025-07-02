@@ -1,8 +1,8 @@
-import { IMenu, IMenuItem } from "@/models/menu";
-import MenuItem from "./menu-item";
+import { Menu, MenuItem as IMenuItem } from '@/models/menu';
+import { MenuItem } from './menu-item';
 
 interface SimpleMenuProps {
-  menu?: IMenu;
+  menu?: Menu;
 }
 
 export default function SimpleMenu({ menu }: SimpleMenuProps) {

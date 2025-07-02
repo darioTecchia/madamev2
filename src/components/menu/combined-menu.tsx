@@ -1,6 +1,6 @@
 'use client';
 
-import { IMenu } from '@/models/menu';
+import { CombinedMenu as ICombinedMenu } from '@/models/menu';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Martini } from 'lucide-react';
@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface CombinedMenuProps {
-  menu: IMenu;
+  menu: ICombinedMenu;
 }
 
 export default function CombinedMenu({ menu }: CombinedMenuProps) {
