@@ -16,8 +16,19 @@ export interface SimpleMenu extends MenuBase {
   type: MenuType.Simple;
 }
 
-export interface CombinedMenu extends MenuBase {
+export interface SubMenu {
+  name: string;
+  id: string;
+  description?: string;
+  icon?: string;
+  overPrice: number;
+  mainItemLabel?: string;
+  additionalItemLabel?: string;
   additionalItems?: MenuItem[];
+}
+
+export interface CombinedMenu extends MenuBase {
+  subMenus: SubMenu[];
   type: MenuType.Combined;
 }
 
