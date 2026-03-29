@@ -1,5 +1,5 @@
 import ollama from 'ollama';
-import DB from './data/db_copy';
+import DB from './data/db';
 
 const PROMPT: string = `
 Sei un esperto bartender e sommelier italiano.
@@ -34,7 +34,10 @@ const main = async () => {
     response += part.message.content;
   }
   console.clear();
-  console.log('\nAll menus processed.', JSON.stringify(JSON.parse(response), null, 2));
-}
+  console.log(
+    '\nAll menus processed.',
+    JSON.stringify(JSON.parse(response), null, 2),
+  );
+};
 
 main();
