@@ -8,7 +8,7 @@ export interface MenuBase {
   id: string;
   name: string;
   description?: string;
-  items?: MenuItem[];
+  items?: (MenuItem | MenuHeader)[];
   type: MenuType;
 }
 
@@ -47,4 +47,10 @@ export interface MenuItem {
   origin?: string;
   notes?: string[];
   size?: string;
+  allergens?: string[];
+}
+
+export interface MenuHeader {
+  name: string;
+  description?: string;
 }

@@ -6,6 +6,7 @@ export interface MenuItemProps {
   description?: string;
   image?: string;
   size?: string;
+  allergens?: string[];
 }
 
 export function MenuItem({
@@ -14,6 +15,7 @@ export function MenuItem({
   description,
   image,
   size,
+  allergens,
 }: MenuItemProps) {
   return (
     <div className="group">
@@ -27,6 +29,13 @@ export function MenuItem({
       {size && <p className="text-xs text-gray-500">{size}</p>}
       {description && (
         <p className="mb-2 mt-1 text-sm text-gray-600">{description}</p>
+      )}
+      {allergens && allergens.length > 0 && (
+        <div className="mt-2">
+          <p className="text-xs text-gray-500">
+            Allergeni: {allergens.join(', ')}
+          </p>
+        </div>
       )}
       {image && (
         <div className="mt-3 overflow-hidden rounded-lg">
