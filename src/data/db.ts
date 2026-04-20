@@ -725,7 +725,8 @@ const DB: IDB = {
       id: 'signature-drink',
       name: 'Signature Drink',
       type: MenuType.Simple,
-      description: 'Le creazioni esclusive dei nostri bartender.',
+      description:
+        'Le creazioni esclusive dei nostri bartender, con e senza alcol.',
       items: [
         { name: 'DREAMERS' } as MenuHeader,
         {
@@ -791,6 +792,37 @@ const DB: IDB = {
           name: 'Machete',
           price: 10,
           description: 'Pisco, Mezcal, ananas, jalapeño, lime',
+        },
+
+        {
+          name: 'MOCKTAILS',
+          description: 'Tutti i drink analcolici sono serviti a € 5',
+        } as MenuHeader,
+        {
+          name: 'Vento d’Estate',
+          price: 5,
+          description: 'Ananas, passion fruit, lime e soda',
+        },
+        {
+          name: 'Purple Rain',
+          price: 5,
+          description: 'Lampone, lime e ginger beer',
+        },
+        {
+          name: 'Lemon Tree',
+          price: 5,
+          description: 'Fragola, limonata e granita di limone',
+        },
+        {
+          name: 'Bocca di Rosa',
+          price: 5,
+          description:
+            'Mirtillo rosso, cordiale al pompelmo rosa e basilico, tonica Fever Tree Mediterranea',
+        },
+        {
+          name: 'Kiss From a Rose',
+          price: 5,
+          description: 'Tanqueray Gin 0.0%, limone, rosa, miele allo zenzero',
         },
       ],
     },

@@ -18,7 +18,6 @@ export default function SimpleMenu({ menu }: SimpleMenuProps) {
               description={item.description}
               size={item.size}
               allergens={item.allergens}
-              // image={item.image}
             />
           );
         } else {
