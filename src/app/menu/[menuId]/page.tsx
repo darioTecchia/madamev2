@@ -67,7 +67,7 @@ interface CategoryLinkProps {
   name: string;
 }
 
-function CategoryLink({ href, name }: CategoryLinkProps) {
+export function CategoryLink({ href, name }: CategoryLinkProps) {
   return (
     <Link
       href={href}

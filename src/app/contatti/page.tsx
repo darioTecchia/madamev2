@@ -1,6 +1,7 @@
-import HeadWithLogo from "@/components/ui/head-with-logo";
-import { MapPin, Phone } from "lucide-react";
-import Link from "next/link";
+import HeadWithLogo from '@/components/ui/head-with-logo';
+import DB from '@/data/db';
+import { MapPin, Phone } from 'lucide-react';
+import { CategoryLink } from '../menu/[menuId]/page';
 
 export default function Contatti() {
   return (
@@ -61,33 +62,16 @@ export default function Contatti() {
       </div>
 
       {/* Quick Links */}
-      <div className="mb-8 w-full border-t border-gray-200 pt-8">
-        <h2 className="mb-6 text-xl font-medium">Collegamenti rapidi</h2>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <Link
-            href="/degustazioni"
-            className="border border-gray-200 p-4 text-center transition-colors hover:bg-gray-50"
-          >
-            Degustazioni
-          </Link>
-          <Link
-            href="/stagionali"
-            className="border border-gray-200 p-4 text-center transition-colors hover:bg-gray-50"
-          >
-            Menu stagionale
-          </Link>
-          <Link
-            href="/gin-list"
-            className="border border-gray-200 p-4 text-center transition-colors hover:bg-gray-50"
-          >
-            Gin List
-          </Link>
-          <Link
-            href="/"
-            className="border border-gray-200 p-4 text-center transition-colors hover:bg-gray-50"
-          >
-            Menu completo
-          </Link>
+      <div className="mt-16 w-full">
+        <h3 className="mb-4 text-lg font-medium">Esplora il nostro menù</h3>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+          {DB.menus.map((menu) => (
+            <CategoryLink
+              key={menu.id}
+              href={`/menu/${menu.id}`}
+              name={menu.name}
+            />
+          ))}
         </div>
       </div>
     </>
