@@ -21,7 +21,7 @@ const DB: IDB = {
       id: 'caffetteria',
       name: 'Caffetteria',
       type: MenuType.Simple,
-      description: 'Aperta fino alle 21:00 - Coffee Bar fino alle 21:00.',
+      description: 'Aperta fino alle 21:00',
       items: [
         { name: 'Caffè espresso', price: 2.0 },
         { name: 'Caffè americano', price: 2.5 },
