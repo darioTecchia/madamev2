@@ -71,7 +71,7 @@ function CategoryLink({ href, name }: CategoryLinkProps) {
   return (
     <Link
       href={href}
-      className="border border-gray-200 px-4 py-3 text-center transition-colors hover:bg-gray-50"
+      className="flex items-center justify-center border border-gray-200 px-4 py-3 text-center transition-colors hover:bg-gray-50"
     >
       {name}
     </Link>

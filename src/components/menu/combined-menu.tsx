@@ -51,7 +51,7 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                     {subMenu.mainItemLabel}
                   </h2>
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                    {menu.items?.map((item) => (
+                    {menu.items?.map((item: MenuItem) => (
                       <Card
                         key={item.name}
                         className={`cursor-pointer transition-all ${
@@ -150,14 +150,7 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                     <div className="mb-4 space-y-2">
                       <div className="flex justify-between">
                         <span>{selectedMainItem.name}</span>
-                        <strong>
-                          €
-                          {
-                            menu.items?.find(
-                              (g) => g.name === selectedMainItem.name,
-                            )?.price
-                          }
-                        </strong>
+                        <strong>€{selectedMainItem.price}</strong>
                       </div>
                       {selectedAdditionalItem && (
                         <div className="flex justify-between">
@@ -195,7 +188,7 @@ export default function CombinedMenu({ menu }: CombinedMenuProps) {
                     {subMenu.mainItemLabel}
                   </h3>
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                    {menu.items?.map((item) => (
+                    {menu.items?.map((item: MenuItem) => (
                       <Card
                         key={item.name}
                         className="cursor-pointer transition-all hover:border-gray-400"
