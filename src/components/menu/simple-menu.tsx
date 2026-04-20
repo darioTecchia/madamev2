@@ -1,4 +1,4 @@
-import { Menu, MenuItem as IMenuItem } from '@/models/menu';
+import { Menu } from '@/models/menu';
 import { MenuItem } from './menu-item';
 
 interface SimpleMenuProps {
