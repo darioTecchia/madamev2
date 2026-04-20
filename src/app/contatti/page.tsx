@@ -35,7 +35,7 @@ export default function Contatti() {
               <p className="text-gray-700">80051 Agerola NA</p>
               <p className="text-gray-700">Italia</p>
               <a
-                href="https://maps.google.com/?q=Piazza+Generale+Avitabile,+80051+Agerola+NA"
+                href="https://maps.app.goo.gl/i7MdC39jsciWtvNBA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-block border-b border-gray-300 text-sm transition-colors hover:border-black"
