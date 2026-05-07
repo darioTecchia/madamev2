@@ -35,7 +35,13 @@ const DB: IDB = {
         { name: 'Ginseng', size: 'Tazza grande', price: 4.0 },
         { name: 'Orzo', size: 'Tazza piccola', price: 2.0 },
         { name: 'Orzo', size: 'Tazza grande', price: 4.0 },
-        { name: 'SOFT DRINK' } as MenuHeader,
+      ],
+    },
+    {
+      id: 'soft-drinks',
+      name: 'Soft Drink',
+      type: MenuType.Simple,
+      items: [
         { name: 'Coca Cola', price: 3.0 },
         { name: 'Coca Cola Zero', price: 3.0 },
         { name: 'Fanta', price: 3.0 },
