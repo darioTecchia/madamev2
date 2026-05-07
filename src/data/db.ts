@@ -35,6 +35,18 @@ const DB: IDB = {
         { name: 'Ginseng', size: 'Tazza grande', price: 4.0 },
         { name: 'Orzo', size: 'Tazza piccola', price: 2.0 },
         { name: 'Orzo', size: 'Tazza grande', price: 4.0 },
+        { name: 'SOFT DRINK' } as MenuHeader,
+        { name: 'Coca Cola', price: 3.0 },
+        { name: 'Coca Cola Zero', price: 3.0 },
+        { name: 'Fanta', price: 3.0 },
+        { name: 'Estathé Limone', price: 3.0 },
+        { name: 'Estathé Pesca', price: 3.0 },
+        { name: 'Cedrata Tassoni', price: 3.0 },
+        { name: 'Schweppes Tonica', price: 3.0 },
+        { name: 'Schweppes Limone', price: 3.0 },
+        { name: 'Schweppes Ginger Beer', price: 3.0 },
+        { name: 'Fever Tree Indian Tonic', price: 4.0 },
+        { name: 'Fever Tree Mediterranean Tonic', price: 4.0 },
       ],
     },
     {
@@ -71,8 +83,11 @@ const DB: IDB = {
         { name: 'Aperol Spritz', price: 8.0 },
         { name: 'Campari Spritz', price: 8.0 },
         { name: 'Limoncello Spritz', price: 8.0 },
+        { name: 'Hugo Spritz', price: 8.0 },
         { name: 'Americano', price: 8.0 },
         { name: 'Negroni', price: 8.0 },
+        { name: 'Calice Prosecco DOC', price: 5.0 },
+        { name: 'Calice Dubl Brut (Feudi di San Gregorio)', price: 9.0 },
       ],
     },
     {
@@ -162,7 +177,7 @@ const DB: IDB = {
           name: 'Naked & Famous',
           price: 9,
           description:
-            'Mezcal Nuestra Soledad, Aperol, lime, Chartreuse giallo',
+            'Mezcal 400 Conejos, Aperol, lime, Chartreuse giallo',
         },
         {
           name: 'Paper Plane',
@@ -196,7 +211,7 @@ const DB: IDB = {
           name: 'Mosquito',
           price: 9,
           description:
-            'Mezcal Nuestra Soledad, Campari, succo di limone, sciroppo allo zenzero',
+            'Mezcal 400 Conejos, Campari, succo di limone, sciroppo allo zenzero',
         },
         {
           name: 'Suffering Bastard',
@@ -211,11 +226,9 @@ const DB: IDB = {
       name: 'Gin List',
       type: MenuType.Combined,
       items: [
-        // € 6 Tier
         { name: 'Tanqueray', price: 6, origin: 'gb' },
         { name: 'Bombay Sapphire', price: 6, origin: 'gb' },
         { name: 'Bulldog', price: 6, origin: 'gb' },
-        // € 7 Tier
         { name: 'Sabatini', price: 7, origin: 'it' },
         { name: "Hendrick's", price: 7, origin: 'gb' },
         { name: 'Nordés', price: 7, origin: 'es' },
@@ -224,7 +237,6 @@ const DB: IDB = {
         { name: 'Plymouth', price: 7, origin: 'gb' },
         { name: 'N°3 London Dry', price: 7, origin: 'nl' },
         { name: 'Fifty Pounds', price: 7, origin: 'gb' },
-        // € 8 Tier
         { name: 'Gunpowder Irish Gin', price: 8, origin: 'ie' },
         { name: 'Gin Mare', price: 8, origin: 'es' },
         { name: "Bobby's", price: 8, origin: 'nl' },
@@ -232,7 +244,7 @@ const DB: IDB = {
         { name: 'Etna', price: 8, origin: 'it' },
         { name: 'Brockmans', price: 8, origin: 'gb' },
         { name: 'Roku', price: 8, origin: 'jp' },
-        // € 9 Tier
+        { name: 'The Botanist', price: 8, origin: 'gb' },
         { name: 'Elephant London Dry', price: 9, origin: 'de' },
         { name: 'Plymouth Navy Strength', price: 9, origin: 'gb' },
         { name: 'Monkey 47', price: 9, origin: 'de' },
@@ -293,6 +305,7 @@ const DB: IDB = {
       items: [
         { name: 'Clément XO Agricole', origin: 'mq', price: 10 },
         { name: 'J. Bally 7', origin: 'mq', price: 9 },
+        { name: 'Mount Gay XO', origin: 'bb', price: 9 },
         { name: 'Zacapa', origin: 'gt', price: 8 },
         { name: 'Hampden Estate 8', origin: 'jm', price: 8 },
         { name: 'La Hechicera', origin: 'co', price: 7 },
@@ -301,6 +314,7 @@ const DB: IDB = {
         { name: 'Diplomatico', origin: 've', price: 6 },
         { name: 'Don Papa Baroko', origin: 'ph', price: 6 },
         { name: 'El Dorado 12', origin: 'gy', price: 6 },
+        { name: 'Pampero Aniversario', origin: 've', price: 6 },
       ],
     },
     {
@@ -366,6 +380,11 @@ const DB: IDB = {
             'Profilo fresco con note di mela, limone e vaniglia dolce.',
         },
         {
+          name: 'Bruichladdich The Classic Laddie',
+          price: 10,
+          description: 'Un Islay single malt non torbato, floreale e complesso.',
+        },
+        {
           name: 'Oban 14',
           price: 10,
           description:
@@ -397,7 +416,6 @@ const DB: IDB = {
           price: 5,
           description: 'Equilibrio perfetto tra fumo dolce e note fruttate.',
         },
-
         { name: 'BOURBON' } as MenuHeader,
         {
           name: 'Michter’s US 1',
@@ -419,7 +437,6 @@ const DB: IDB = {
           price: 6,
           description: 'Complesso, con sentori di cacao e spezie dolci.',
         },
-
         { name: 'RYE' } as MenuHeader,
         {
           name: 'Woodford Reserve Rye',
@@ -431,7 +448,6 @@ const DB: IDB = {
           price: 6,
           description: 'Estremamente secco con sentori di ciliegia e tabacco.',
         },
-
         { name: 'IRISH & JAPANESE' } as MenuHeader,
         {
           name: 'Connemara',
@@ -497,6 +513,11 @@ const DB: IDB = {
             'Tequila chiara dal sapore pulito, con fresche note agrumate e un leggero tocco di pepe nero.',
         },
         {
+          name: 'Josè Cuervo Tradicional Silver',
+          price: 6,
+          description: 'Tequila 100% agave blu, invecchiata brevemente per una maggiore morbidezza.',
+        },
+        {
           name: 'Tequila 1800 Blanco',
           price: 6,
           description:
@@ -556,13 +577,17 @@ const DB: IDB = {
           description:
             'Tequila iconica invecchiata 8 mesi in botti di rovere americano; corpo vellutato con note di nocciola e vaniglia.',
         },
-
         { name: 'MEZCAL' } as MenuHeader,
         {
           name: 'Mezcal Nuestra Soledad',
           price: 6,
           description:
             'Mezcal artigianale 100% Espadín, con un carattere terroso e un’intensa affumicatura naturale.',
+        },
+        {
+          name: 'Mezcal 400 Conejos',
+          price: 7,
+          description: 'Mezcal equilibrato con note di frutta tropicale e un fumo morbido.',
         },
         {
           name: 'Mezcal Casamigos',
@@ -584,7 +609,6 @@ const DB: IDB = {
           description:
             'Il più celebre brandy italiano, distillato da uve Trebbiano e invecchiato in botti di rovere. Gusto deciso con note di frutta secca e vaniglia.',
         },
-
         { name: 'COGNAC' } as MenuHeader,
         {
           name: 'Hennessy V.S.',
@@ -610,7 +634,6 @@ const DB: IDB = {
         { name: 'Falanghina', price: 4 },
         { name: 'Chardonnay', price: 5 },
         { name: 'Gewürztraminer', price: 5 },
-
         { name: 'IN BOTTIGLIA' } as MenuHeader,
         {
           name: 'Pallagrello Bianco (Tenuta Tralice)',
@@ -649,8 +672,6 @@ const DB: IDB = {
         },
       ],
     },
-
-    // --- VINI ROSSI ---
     {
       id: 'vini-rossi',
       name: 'Vini Rossi',
@@ -661,7 +682,6 @@ const DB: IDB = {
         { name: 'Aglianico', price: 4 },
         { name: 'Primitivo', price: 5 },
         { name: 'Pinot Nero', price: 5 },
-
         { name: 'IN BOTTIGLIA' } as MenuHeader,
         {
           name: 'Pallagrello Nero (Tenuta Tralice)',
@@ -700,8 +720,6 @@ const DB: IDB = {
         },
       ],
     },
-
-    // --- BOLLICINE E CHAMPAGNE ---
     {
       id: 'bollicine-champagne',
       name: 'Bollicine e Champagne',
@@ -711,7 +729,6 @@ const DB: IDB = {
         { name: 'AL CALICE' } as MenuHeader,
         { name: 'Prosecco DOC', price: 5 },
         { name: 'Metodo Classico Feudi di San Gregorio', price: 9 },
-
         { name: 'IN BOTTIGLIA' } as MenuHeader,
         { name: 'Prosecco DOC Sui Nui (Brut o Extra Dry)', price: 30 },
         {
@@ -751,7 +768,7 @@ const DB: IDB = {
         {
           name: 'Red Lipstick',
           price: 10,
-          description: 'Cognac Hennessy, Chardonnay, fragole & panna, CO2',
+          description: 'Cognac Remy Martin V.S.O.P., Chardonnay, fragole & panna, CO2',
           allergens: ['latte'],
         },
         {
@@ -765,7 +782,6 @@ const DB: IDB = {
           price: 10,
           description: 'Gin Bulldog, Calvados, Mastiha, limone, mela verde',
         },
-
         {
           name: 'MADAMÈ SPECIALS',
           description: 'Tutti i Madamè Specials sono serviti a € 10',
@@ -791,37 +807,36 @@ const DB: IDB = {
         {
           name: 'Machete',
           price: 10,
-          description: 'Pisco, Mezcal, ananas, jalapeño, lime',
+          description: 'Pisco, Mezcal 400 Conejos, ananas, jalapeño, lime',
         },
-
         {
           name: 'MOCKTAILS',
-          description: 'Tutti i drink analcolici sono serviti a € 5',
+          description: 'Tutti i drink analcolici sono serviti a € 6',
         } as MenuHeader,
         {
           name: 'Vento d’Estate',
-          price: 5,
+          price: 6,
           description: 'Ananas, passion fruit, lime e soda',
         },
         {
           name: 'Purple Rain',
-          price: 5,
+          price: 6,
           description: 'Lampone, lime e ginger beer',
         },
         {
           name: 'Lemon Tree',
-          price: 5,
+          price: 6,
           description: 'Fragola, limonata e granita di limone',
         },
         {
           name: 'Bocca di Rosa',
-          price: 5,
+          price: 6,
           description:
             'Mirtillo rosso, cordiale al pompelmo rosa e basilico, tonica Fever Tree Mediterranea',
         },
         {
           name: 'Kiss From a Rose',
-          price: 5,
+          price: 6,
           description: 'Tanqueray Gin 0.0%, limone, rosa, miele allo zenzero',
         },
       ],
@@ -862,7 +877,7 @@ const DB: IDB = {
           name: 'Avocado Toast',
           price: 10,
           description:
-            'Pane multicereale, uova strapazzate, avocado, lime, semi di chia',
+            'Pane multicereale, uova occhio di bue, avocado, lime, semi di chia',
           allergens: ['glutine', 'uova', 'semi di sesamo', 'semi di chia'],
         },
         {
@@ -907,10 +922,9 @@ const DB: IDB = {
           name: 'Fresco',
           price: 10,
           description:
-            'Panino croccante, culaccia di Parma, fior di latte, rucola, pomodorini confit, patatine fritte',
+            'Panino croccante, culaccia di Parma, fior di latte, rucola, pomodorini confit, patate al forno',
           allergens: ['glutine', 'latte'],
         },
-
         {
           name: 'LE CENTRIFUGHE',
           description: 'Tutte le centrifughe sono servite a € 5',
@@ -923,16 +937,14 @@ const DB: IDB = {
         { name: 'Golden Hour', description: 'Arancia, carota, zenzero' },
         { name: 'Tropical Mood', description: 'Ananas, mela, lime' },
         { name: 'Red Kiss', description: 'Fragola, mela, limone' },
-
         { name: 'APERITIVO E DINNER (DALLE 18:00)' } as MenuHeader,
         {
           name: 'L’Aperitivo all’Italiana (per 2 persone)',
-          price: 15,
+          price: 18,
           description:
             '6 finger food da condividere con prodotti stagionali selezionati',
           allergens: ['glutine', 'latte', 'uova', 'frutta a guscio', 'pesce'],
         },
-
         { name: 'LE BRUSCHETTE (6 PZ)' } as MenuHeader,
         {
           name: 'Stracciatella, mortadella e pistacchio',
@@ -950,7 +962,6 @@ const DB: IDB = {
           allergens: ['pesce', 'latte', 'glutine'],
         },
         { name: 'Pomodorini e basilico', price: 6, allergens: ['glutine'] },
-
         { name: 'FRITTURE' } as MenuHeader,
         {
           name: 'Crocchè di patate',
@@ -977,7 +988,6 @@ const DB: IDB = {
           price: 3,
           description: 'Possibile contaminazione crociata (olio condiviso)',
         },
-
         {
           name: "O' CUZZETIELLO",
           description:
@@ -994,20 +1004,19 @@ const DB: IDB = {
           price: 6,
           allergens: ['glutine', 'latte', 'uova'],
         },
-
         { name: 'BUN, SANDWICH & TAGLIERI' } as MenuHeader,
         {
           name: 'Bun Hamburger',
           price: 10,
           description:
-            'Hamburger di manzo, cheddar, lattuga, pomodoro, cipolla caramellata, mayo e patatine fritte',
+            'Hamburger di manzo, cheddar, lattuga, pomodoro, cipolla caramellata, mayo e patate al forno',
           allergens: ['glutine', 'latte', 'uova'],
         },
         {
           name: 'Club Sandwich',
           price: 10,
           description:
-            'Pane in cassetta, pollo grigliato, bacon, uova, lattuga, pomodoro, mayo e patatine fritte',
+            'Pane in cassetta, pollo grigliato, bacon, uova, lattuga, pomodoro, mayo e patate al forno',
           allergens: ['glutine', 'latte', 'uova'],
         },
         {
